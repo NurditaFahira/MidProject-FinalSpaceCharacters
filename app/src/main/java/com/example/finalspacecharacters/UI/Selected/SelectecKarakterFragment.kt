@@ -33,7 +33,7 @@ class SelectecKarakterFragment : Fragment() {
             .load(StatikData.img_url)
             .into(karakter_detail_img)
 
-        karakter_name.text = StatikData.name
+        karakter_name.text = StatikData.name.uppercase()
         karakter_species.text = "Spesies : " + StatikData.species
         karakter_status.text =  "Status : " + StatikData.status
         karakter_gender.text = StatikData.gender
