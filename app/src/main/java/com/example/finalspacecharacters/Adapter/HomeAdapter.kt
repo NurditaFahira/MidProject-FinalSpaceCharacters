@@ -15,6 +15,11 @@ class HomeAdapter (private val lisKarakter: ArrayList<DataKarakterItem>) : Recyc
     class Homeholder(itemview : View) : RecyclerView.ViewHolder(itemview){
         fun bind(karakter : DataKarakterItem){
             with(itemView){
+
+                Picasso.get()
+                    .load(karakter.img_url)
+                    .into(karakter_img)
+
                 nametv.text = karakter.name
                 speciestv.text = "Species : " + karakter.species
             }
