@@ -10,10 +10,14 @@ import com.example.finalspacecharacters.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_home.view.*
 
-class HomeAdapter (private val lisKarakter: ArrayList<DataKarakterItem>) : RecyclerView.Adapter<HomeAdapter.Homeholder>(){
+class HomeAdapter (private val lisKarakter: ArrayList<DataKarakterItem>, val listener : OnItemClickListener) : RecyclerView.Adapter<HomeAdapter.Homeholder>(){
+
+    interface OnItemClickListener{
+        fun onClick(karakter : DataKarakterItem)
+    }
 
     class Homeholder(itemview : View) : RecyclerView.ViewHolder(itemview){
-        fun bind(karakter : DataKarakterItem){
+        fun bind(karakter : DataKarakterItem, listener : OnItemClickListener){
             with(itemView){
 
                 Picasso.get()
@@ -22,6 +26,11 @@ class HomeAdapter (private val lisKarakter: ArrayList<DataKarakterItem>) : Recyc
 
                 nametv.text = karakter.name
                 speciestv.text = "Species : " + karakter.species
+
+                itemView.setOnClickListener{
+                    //pindah fragment
+                    listener.onClick(karakter)
+                }
             }
         }
     }
@@ -32,7 +41,7 @@ class HomeAdapter (private val lisKarakter: ArrayList<DataKarakterItem>) : Recyc
     }
 
     override fun onBindViewHolder(holder: Homeholder, position: Int) {
-        holder.bind(lisKarakter[position])
+        holder.bind(lisKarakter[position], listener)
 
     }
 

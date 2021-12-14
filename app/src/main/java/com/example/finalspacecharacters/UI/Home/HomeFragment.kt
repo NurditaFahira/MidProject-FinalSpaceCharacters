@@ -6,9 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.finalspacecharacters.DataKarakterItem
 import com.example.finalspacecharacters.R
+import com.example.finalspacecharacters.UI.Selected.SelectecKarakterFragment
+import com.example.finalspacecharacters.Utilities.StatikData
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -36,7 +42,19 @@ class HomeFragment : Fragment() {
 
         recyview_home.setHasFixedSize(true)
         recyview_home.layoutManager = LinearLayoutManager(context)
-        viewModel.getDataFromApi(recyview_home)
+        viewModel.getDataFromApi(recyview_home, object : HomeViewModel.onClickListener{
+            override fun onClick(karakter: DataKarakterItem) {
+                //Toast.makeText(context,karakter.name, Toast.LENGTH_SHORT).show()
+                StatikData.fill(karakter)
+                val fragment: Fragment = SelectecKarakterFragment()
+                val fragmentManager: FragmentManager = activity!!.supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.container_fragment, fragment)
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
+
+        })
 
         }
 
