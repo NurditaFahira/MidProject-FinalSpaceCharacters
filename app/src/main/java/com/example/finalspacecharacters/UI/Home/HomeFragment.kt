@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalspacecharacters.R
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -20,17 +21,6 @@ class HomeFragment : Fragment() {
         Log.d("HomeFragment", "OnCreate Called")
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        Log.d("HomeFragment", "onCreateView Called")
-        texttv.text = ""+viewModel.number
-
-        addBtn.setOnClickListener{
-            viewModel.number++;
-            texttv.text=""+viewModel.number
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,6 +30,15 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.d("HomeFragment", "onCreateView Called")
+
+        recyview_home.setHasFixedSize(true)
+        recyview_home.layoutManager = LinearLayoutManager(context)
+        viewModel.getDataFromApi(recyview_home)
+
+        }
 
     override fun onDestroy() {
         super.onDestroy()
