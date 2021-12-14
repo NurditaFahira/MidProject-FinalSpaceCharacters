@@ -6,96 +6,144 @@
     tools:context=".UI.Selected.SelectecKarakterFragment"
     android:orientation="vertical">
 
-
-    <ImageView
-        android:id="@+id/karakter_detail_img"
-        android:layout_width="225dp"
-        android:layout_height="225dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"/>
-
-    <TextView
-        android:id="@+id/karakter_name"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="BellaTrix Andalusia"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/karakter_gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Female"
-        android:textSize="8dp"
-
-        android:layout_gravity="center"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/karakter_status"
-        android:layout_width="285dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center"
-        android:text="Status : Alive"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/karakter_species"
-        android:layout_width="285dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center"
-        android:text="Species : Human"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/karakter_abilities"
-        android:layout_width="285dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center"
-        android:text="Abilities : [manjat, makan, hidup, berenang, terbang]"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/karakter_hair"
-        android:layout_width="285dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center"
-        android:text="Hair : Blonde"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/karakter_origin"
-        android:layout_width="285dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Origin : Indonesia"
-        android:layout_gravity="center"
-        android:textColor="@color/black"/>
-    <TextView
-        android:id="@+id/karakter_alias"
-        android:layout_width="285dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Alias : [Marni, Bella,Sinta, Rama] "
-        android:layout_gravity="center"
-        android:textColor="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/button_share"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Share" />
+            <ImageView
+                android:id="@+id/karakter_detail_img"
+                android:layout_width="225dp"
+                android:layout_height="225dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"/>
+
+            <TextView
+                android:id="@+id/karakter_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="BellaTrix Andalusia"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/karakter_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Female"
+                android:textSize="15dp"
+
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/karakter_status"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:text="Status : Alive"
+                android:textColor="@color/black"/>
+            <View
+                android:layout_gravity="center"
+                android:layout_width="285dp"
+                android:layout_marginTop="4dp"
+                android:visibility="visible"
+                android:layout_height="1dp"
+                android:background="#20B2AA"/>
+            <TextView
+                android:id="@+id/karakter_species"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:text="Species : Human"
+                android:textColor="@color/black"/>
+            <View
+                android:layout_gravity="center"
+                android:layout_width="285dp"
+                android:layout_marginTop="4dp"
+                android:visibility="visible"
+                android:layout_height="1dp"
+                android:background="#20B2AA"/>
+
+            <TextView
+                android:id="@+id/karakter_abilities"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:text="Abilities : [manjat, makan, hidup, berenang, terbang]"
+                android:textColor="@color/black"/>
+            <View
+                android:layout_gravity="center"
+                android:layout_width="285dp"
+                android:layout_marginTop="4dp"
+                android:visibility="visible"
+                android:layout_height="1dp"
+                android:background="#20B2AA"/>
+
+            <TextView
+                android:id="@+id/karakter_hair"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:text="Hair : Blonde"
+                android:textColor="@color/black"/>
+            <View
+                android:layout_gravity="center"
+                android:layout_width="285dp"
+                android:visibility="visible"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="#20B2AA"/>
+
+            <TextView
+                android:id="@+id/karakter_origin"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Origin : Indonesia"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+            <View
+                android:layout_gravity="center"
+                android:layout_width="285dp"
+                android:visibility="visible"
+                android:layout_marginTop="4dp"
+                android:layout_height="1dp"
+                android:background="#20B2AA"/>
+            <TextView
+                android:id="@+id/karakter_alias"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Alias : [Marni, Bella,Sinta, Rama] "
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
 
 
+            <Button
+                android:id="@+id/btn_share"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Share" />
+
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

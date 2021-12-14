@@ -1,5 +1,6 @@
 package com.example.finalspacecharacters.UI.Selected
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,6 +41,19 @@ class SelectecKarakterFragment : Fragment() {
         karakter_origin.text = "Origin : " + StatikData.origin
         karakter_abilities.text = "Abilities : " + StatikData.abilities.toString()
         karakter_alias.text = "Alias : " + StatikData.alias.toString()
+
+        btn_share.setOnClickListener{
+            val name = StatikData.name.uppercase()
+            val species = StatikData.species
+            val status = StatikData.status
+            val sendIntent:Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "Nama Karakter : $name \nSpesies : $species \nStatus : $status")
+                type="text/plain"
+            }
+            val shareIntent = Intent.createChooser(sendIntent,null)
+            startActivity(shareIntent)
+        }
 
 
     }
